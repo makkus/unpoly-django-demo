@@ -1,7 +1,8 @@
 <div class="relative inline-block">
     <a href='{{ author.get_absolute_url }}'
        class='link relative pr-6 group'
-       >
+       up-follow>
         {{ author.full_name }}
+        <span class='loading loading-spinner loading-xs absolute right-0 top-1 hidden group-[.up-active]:inline-block'></span>
     </a>
 </div>

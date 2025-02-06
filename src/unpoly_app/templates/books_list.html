@@ -6,7 +6,9 @@
         <h2 class="card-title text-2xl mb-6">Books</h2>
         <form method="get"
               class="mb-6"
-              >
+              up-submit
+              up-target=".card-body"
+              up-autosubmit>
             <div class="flex flex-wrap items-end gap-4">
                 {% for field in filter.form %}
                     <div class="form-control">
@@ -23,7 +25,7 @@
                 {% endfor %}
                 <div class="flex gap-2">
                     <button type="submit" class="btn btn-primary js-filter-button">Filter</button>
-                    <a href="?" class="btn btn-ghost" >Clear</a>
+                    <a href="?" class="btn btn-ghost" up-follow up-target=".card-body">Clear</a>
                 </div>
             </div>
         </form>

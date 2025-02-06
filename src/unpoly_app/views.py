@@ -28,7 +28,7 @@ def author_list(request):
 
     authors_table = AuthorTable(authors, prefix="authors-")
 
-    RequestConfig(request, paginate={"per_page": 5}).configure(authors_table)
+    RequestConfig(request, paginate={"per_page": 50}).configure(authors_table)
 
     context = {
         "authors": authors,

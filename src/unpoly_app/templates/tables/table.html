@@ -27,14 +27,16 @@
                                                                 {% if 'text-right' in column.attrs.th.class %}
                                                                     <a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}"
                                                                        class="link link-hover flex items-center gap-2 justify-end w-full"
-                                                                       >
+                                                                       up-follow="true"
+                                                                       up-target="#{{ table_id }}">
                                                                         {{ column.header }}
                                                                         <i class="fas fa-sort text-xs opacity-50"></i>
                                                                     </a>
                                                                 {% else %}
                                                                     <a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}"
                                                                        class="link link-hover flex items-center gap-2 w-full"
-                                                                       >
+                                                                       up-follow="true"
+                                                                       up-target="#{{ table_id }}">
                                                                         {{ column.header }}
                                                                         <i class="fas fa-sort text-xs opacity-50"></i>
                                                                     </a>
@@ -110,7 +112,9 @@
                                     <div class="join">
                                         <a href="{% if table.page.has_previous %}{% querystring table.prefixed_page_field=table.page.previous_page_number %}{% else %}#{% endif %}"
                                            class="join-item btn btn-sm {% if not table.page.has_previous %}btn-disabled{% endif %}"
-                                           >
+                                           up-follow
+                                           up-target="#{{ table_id }}"
+                                           up-history="false">
                                             <i class="fas fa-chevron-left"></i>
                                         </a>
                                         {% if table.page.has_previous or table.page.has_next %}
@@ -121,14 +125,18 @@
                                                     {% else %}
                                                         <a href="{% querystring table.prefixed_page_field=p %}"
                                                            class="join-item btn btn-sm {% if p == table.page.number %}btn-active{% endif %}"
-                                                           >{{ p }}</a>
+                                                           up-follow
+                                                           up-target="#{{ table_id }}"
+                                                           up-history="false">{{ p }}</a>
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endblock pagination.range %}
                                         {% endif %}
                                         <a href="{% if table.page.has_next %}{% querystring table.prefixed_page_field=table.page.next_page_number %}{% else %}#{% endif %}"
                                            class="join-item btn btn-sm {% if not table.page.has_next %}btn-disabled{% endif %}"
-                                           >
+                                           up-follow
+                                           up-target="#{{ table_id }}"
+                                           up-history="false">
                                             <i class="fas fa-chevron-right"></i>
                                         </a>
                                     </div>

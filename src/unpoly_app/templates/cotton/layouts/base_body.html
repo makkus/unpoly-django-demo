@@ -1,7 +1,7 @@
 {% load tailwind_cli %}
 {% load static %}
 {% tailwind_css %}
-<div >
+<div up-main>
     {% if messages %}
         {% for message in messages %}
             <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} mb-4 flex justify-between items-center"

@@ -4,8 +4,10 @@
     <div class="card-body">
         <h2 class="card-title mb-4">Edit Book</h2>
         <form method="POST"
+              up-submit
+              up-target="main"
               action="{% url 'book_edit' book.pk %}"
-              >
+              up-layer="parent">
             {% csrf_token %}
             <div class="form-control mb-4">
                 <label class="label">
@@ -31,7 +33,7 @@
             <div class="flex justify-end gap-2">
                 <a href="{% url 'book_detail' book.pk %}"
                    class="btn btn-ghost"
-                   >Cancel</a>
+                   up-dismiss>Cancel</a>
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
