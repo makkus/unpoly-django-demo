@@ -1,7 +1,7 @@
 <nav class="bg-primary shadow-lg fixed w-full top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-            <div class="flex items-center">
+            <div class="flex items-center space-x-4">
                 <!-- Logo/Home -->
                 <div class="flex-shrink-0">
                     <a href="{% url 'home' %}"
@@ -9,20 +9,12 @@
                        >Home</a>
                 </div>
                 <!-- Navigation Links -->
-                <div class="hidden md:block ml-10">
-                    <div class="flex items-center space-x-4">
-                        <a href="{% url 'author_list' %}"
-                           class="text-primary-content px-3 py-2 rounded-md text-sm font-medium"
-                        >Authors</a>
-                    </div>
-                </div>
-                <div class="hidden md:block ml-10">
-                    <div class="flex items-center space-x-4">
-                        <a href="{% url 'book_list' %}"
-                           class="text-primary-content px-3 py-2 rounded-md text-sm font-medium"
-                           >Books</a>
-                    </div>
-                </div>
+                <a href="{% url 'author_list' %}"
+                   class="text-primary-content px-3 py-2 rounded-md text-sm font-medium"
+                >Authors</a>
+                <a href="{% url 'book_list' %}"
+                   class="text-primary-content px-3 py-2 rounded-md text-sm font-medium"
+                >Books</a>
             </div>
         </div>
     </div>
