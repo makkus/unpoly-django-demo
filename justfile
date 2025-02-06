@@ -27,7 +27,7 @@ reformat-templates:
     uv run djlint --reformat src/unpoly_app/templates
 
 runserver:
-    uv run python manage.py runserver --force-color 0.0.0.0:8000
+    uv run python manage.py runserver --force-color 0.0.0.0:8001
 
 tailwind:
     FORCE_COLOR=true ./bin/tailwindcss -c tailwind.config.js -i ./src/unpoly_app/static/css/input.css -o src/unpoly_app/static/css/tailwind.css --watch
