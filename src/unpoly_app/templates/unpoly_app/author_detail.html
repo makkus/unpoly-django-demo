@@ -1,0 +1,37 @@
+{% load render_table from django_tables2 %}
+<c-layouts.base>
+<div class="p-6">
+    <h1 class="text-3xl font-bold mb-6">{{ author.first_name }} {{ author.last_name }}</h1>
+    <div class="card bg-base-100 shadow-xl mb-8">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Details</h2>
+            <table class="table  w-full">
+                <tbody>
+                    <tr>
+                        <td class="font-medium">First Name</td>
+                        <td>{{ author.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">Last Name</td>
+                        <td>{{ author.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">Age</td>
+                        <td>{{ author.age }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">Number of Books</td>
+                        <td>{{ author.num_books }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card bg-base-100 shadow-xl mt-6">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Books</h2>
+            {% render_table books_table %}
+        </div>
+    </div>
+</div>
+</c-layouts.base>

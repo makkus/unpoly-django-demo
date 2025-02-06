@@ -1,0 +1,29 @@
+{% load tailwind_cli %}
+{% load static %}
+<!DOCTYPE html>
+<html data-theme="winter">
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+              rel="stylesheet"
+              type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}"
+              rel="stylesheet"
+              type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}"
+              rel="stylesheet"
+              type="text/css">
+    </head>
+    <body>
+        <div class="relative">
+            <c-navigation></c-navigation>
+        </div>
+        <div class="pt-24 w-full px-4">
+            <c-layouts.base_body>
+            {{ slot }}
+            </c-layouts.base_body>
+        </div>
+    </body>
+</html>

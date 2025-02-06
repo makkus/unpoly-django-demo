@@ -1,0 +1,9 @@
+{% load render_table from django_tables2 %}
+<c-layouts.base>
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title text-2xl mb-6">Authors</h2>
+        {% render_table authors_table %}
+    </div>
+</div>
+</c-layouts.base>

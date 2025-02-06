@@ -1,0 +1,40 @@
+{% load widget_tweaks %}
+<c-layouts.base>
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title mb-4">Edit Book</h2>
+        <form method="POST"
+              action="{% url 'book_edit' book.pk %}"
+              >
+            {% csrf_token %}
+            <div class="form-control mb-4">
+                <label class="label">
+                    <span class="label-text">Title</span>
+                </label>
+                {{ form.title.errors }}
+                {{ form.title|add_class:"input input-bordered" }}
+            </div>
+            <div class="form-control mb-4">
+                <label class="label">
+                    <span class="label-text">Author</span>
+                </label>
+                {{ form.author.errors }}
+                {{ form.author|add_class:"select select-bordered" }}
+            </div>
+            <div class="form-control mb-6">
+                <label class="label">
+                    <span class="label-text">Publication Date</span>
+                </label>
+                {{ form.publication_date.errors }}
+                {{ form.publication_date|add_class:"input input-bordered" }}
+            </div>
+            <div class="flex justify-end gap-2">
+                <a href="{% url 'book_detail' book.pk %}"
+                   class="btn btn-ghost"
+                   >Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+</c-layouts.base>

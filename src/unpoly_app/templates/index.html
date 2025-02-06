@@ -1,0 +1,29 @@
+{% load static %}
+<c-layouts.base>
+  <div class="p-6">
+    <h1 class="text-3xl font-bold mb-12">
+      Pure Django Version
+    </h1>
+
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <div class="flex items-center justify-between">
+          <!-- Link section -->
+          <div>
+            <a href="https://github.com/makkus/unpoly-django-demo"
+               class="text-2xl link link-primary hover:text-3xl transition-all duration-200">
+              github.com/makkus/unpoly-django-demo
+            </a>
+          </div>
+
+          <!-- QR code section -->
+          <div class="w-64 h-64 flex-shrink-0">
+            <img src="{% static 'qr-code.png' %}"
+                 alt="Project link"
+                 class="w-full h-full object-contain">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c-layouts.base>

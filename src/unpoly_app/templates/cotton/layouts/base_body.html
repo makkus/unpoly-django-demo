@@ -1,0 +1,36 @@
+{% load tailwind_cli %}
+{% load static %}
+{% tailwind_css %}
+<div >
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} mb-4 flex justify-between items-center"
+                 id="message-{{ forloop.counter }}">
+                <span>{{ message }}</span>
+                <button onclick="this.parentElement.remove()" class="btn btn-ghost btn-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        {% endfor %}
+        <script>
+    // Auto-dismiss messages after 5 seconds
+    document.addEventListener('DOMContentLoaded', function() {
+        const messages = document.querySelectorAll('.alert');
+        messages.forEach(function(message) {
+            setTimeout(function() {
+                message.style.opacity = '0';
+                setTimeout(function() {
+                    message.remove();
+                }, 300); // Remove after fade animation
+            }, 5000);
+        });
+    });
+        </script>
+        <style>
+    .alert {
+        transition: opacity 0.3s ease-in-out;
+    }
+        </style>
+    {% endif %}
+    {{ slot }}
+</div>

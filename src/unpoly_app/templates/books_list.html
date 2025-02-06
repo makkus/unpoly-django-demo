@@ -1,0 +1,33 @@
+{% load render_table from django_tables2 %}
+{% load widget_tweaks %}
+<c-layouts.base>
+<div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+        <h2 class="card-title text-2xl mb-6">Books</h2>
+        <form method="get"
+              class="mb-6"
+              >
+            <div class="flex flex-wrap items-end gap-4">
+                {% for field in filter.form %}
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">{{ field.label }}</span>
+                        </label>
+                        {{ field.errors }}
+                        {% if field.field.widget|yesno == "yes" %}
+                            {{ field|add_class:"select select-bordered w-full" }}
+                        {% else %}
+                            {{ field|add_class:"input input-bordered w-full" }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <div class="flex gap-2">
+                    <button type="submit" class="btn btn-primary js-filter-button">Filter</button>
+                    <a href="?" class="btn btn-ghost" >Clear</a>
+                </div>
+            </div>
+        </form>
+        {% render_table books_table %}
+    </div>
+</div>
+</c-layouts.base>

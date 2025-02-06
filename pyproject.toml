@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unpoly-django-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django-cotton>=1.5.2",
+    "django>=5.1.5",
+    "pip>=25.0",
+    "fontawesomefree>=6.6.0",
+    "django-tailwind-cli>=2.21.1",
+    "django-seed>=0.3.1",
+    "django-tables2>=2.7.5",
+    "django-filter>=24.3",
+    "django-widget-tweaks>=1.5.0",
+    "crispy-tailwind>=1.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "djlint>=1.36.4",
+    "psycopg2-binary>=2.9.10",
+]
